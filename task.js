@@ -1,11 +1,16 @@
-const rotator__cases = document.querySelectorAll('.rotator__case');
-let currentIndex = 0;
+const rotators = document.querySelectorAll('.rotator');
 
-function rotateAd() {
-    rotator__cases[currentIndex].classList.remove('rotator__case_active');
-    currentIndex = (currentIndex + 1) % rotator__cases.length;
-    rotator__cases[currentIndex].classList.add('rotator__case_active');
-    rotator__cases[currentIndex].style.color = rotator__cases[currentIndex].dataset.color;
-}
+rotators.forEach((rotator) => {
+    const rotator__cases = rotator.querySelectorAll('.rotator__case');
+    let currentIndex = 0;
 
-setInterval(rotateAd, rotator__cases[currentIndex].dataset.speed)
+    function rotateAd() {
+        rotator__cases[currentIndex].classList.remove('rotator__case_active');
+        currentIndex = (currentIndex + 1) % rotator__cases.length;
+        rotator__cases[currentIndex].classList.add('rotator__case_active');
+        rotator__cases[currentIndex].style.color = rotator__cases[currentIndex].dataset.color;
+    }
+
+    setInterval(rotateAd, rotator__cases[currentIndex].dataset.speed)
+
+})
