@@ -9,8 +9,8 @@ rotators.forEach((rotator) => {
         currentIndex = (currentIndex + 1) % rotator__cases.length;
         rotator__cases[currentIndex].classList.add('rotator__case_active');
         rotator__cases[currentIndex].style.color = rotator__cases[currentIndex].dataset.color;
+        setTimeout(rotateAd, rotator__cases[currentIndex].dataset.speed)
     }
 
-    setInterval(rotateAd, rotator__cases[currentIndex].dataset.speed)
-
+    setTimeout(rotateAd, rotator__cases[currentIndex].dataset.speed)
 })
